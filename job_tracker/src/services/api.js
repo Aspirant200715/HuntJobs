@@ -35,7 +35,7 @@ export const fetchJobs = async () => {
   return res.data.products.map((item, index) => ({
     id: item.id,
 
-    // ✅ USE REAL COMPANIES
+
     company: realCompanies[index % realCompanies.length],
 
     role: roles[index % roles.length],

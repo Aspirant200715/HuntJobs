@@ -37,7 +37,7 @@ function EditApplication() {
       <h1 className="app-page-title mb-8">Edit Application</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {/* Company */}
+ 
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Company
@@ -45,7 +45,7 @@ function EditApplication() {
           <input className="app-input mt-1.5" {...register("company")} />
         </div>
 
-        {/* Role */}
+
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Role
@@ -53,7 +53,7 @@ function EditApplication() {
           <input className="app-input mt-1.5" {...register("role")} />
         </div>
 
-        {/* Location */}
+  
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Location
@@ -61,7 +61,7 @@ function EditApplication() {
           <input className="app-input mt-1.5" {...register("location")} />
         </div>
 
-        {/* Salary */}
+
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Salary
@@ -69,7 +69,6 @@ function EditApplication() {
           <input className="app-input mt-1.5" {...register("salary")} />
         </div>
 
-        {/* Platform */}
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Platform
@@ -77,7 +76,6 @@ function EditApplication() {
           <input className="app-input mt-1.5" {...register("platform")} />
         </div>
 
-        {/* Status */}
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Status
@@ -90,7 +88,7 @@ function EditApplication() {
           </select>
         </div>
 
-        {/* Applied Date */}
+
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Applied Date
@@ -102,7 +100,7 @@ function EditApplication() {
           />
         </div>
 
-        {/* Interview Date */}
+  
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Interview Date
@@ -114,7 +112,7 @@ function EditApplication() {
           />
         </div>
 
-        {/* Notes */}
+  
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Notes
@@ -125,7 +123,7 @@ function EditApplication() {
           />
         </div>
 
-        {/* Submit */}
+
         <div className="pt-4">
           <button type="submit" className="app-btn-primary w-full">
             Update Application

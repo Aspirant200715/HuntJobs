@@ -81,7 +81,7 @@ function Dashboard({ userName }) {
         currently have {total} opportunities tracked.
       </p>
 
-      {/* 🔢 STAT CARDS */}
+
       <div className="grid gap-4 md:grid-cols-4 mb-8">
         {[
           { label: "Total Applications", value: total },
@@ -106,9 +106,9 @@ function Dashboard({ userName }) {
         ))}
       </div>
 
-      {/* 📊 CHARTS */}
+
       <div className="grid gap-6 md:grid-cols-2">
-        {/* Pie Chart */}
+ 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -152,7 +152,7 @@ function Dashboard({ userName }) {
           </div>
         </motion.div>
 
-        {/* Bar Chart */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -3,7 +3,7 @@ export const generateInsights = (applications) => {
 
   const insights = [];
 
-  // Status counts
+
   const statusCount = {};
   const platformCount = {};
 
@@ -19,14 +19,14 @@ export const generateInsights = (applications) => {
 
   const successRate = (offers / total) * 100;
 
-  // 🧠 Insight 1 — Success rate
+ 
   if (successRate < 20) {
     insights.push("Your success rate is low. Consider improving your resume or targeting better roles.");
   } else {
     insights.push("Great! Your success rate is strong. Keep applying strategically.");
   }
 
-  // 🧠 Insight 2 — Top platform
+
   const topPlatform = Object.entries(platformCount).sort(
     (a, b) => b[1] - a[1]
   )[0]?.[0];
@@ -35,12 +35,12 @@ export const generateInsights = (applications) => {
     insights.push(`You are most active on ${topPlatform}. Consider doubling down there.`);
   }
 
-  // 🧠 Insight 3 — Rejections
+
   if (rejected > offers) {
     insights.push("You are getting more rejections than offers. Try refining your applications.");
   }
 
-  // 🧠 Insight 4 — Consistency
+
   if (total < 10) {
     insights.push("You should apply more consistently to increase chances.");
   }

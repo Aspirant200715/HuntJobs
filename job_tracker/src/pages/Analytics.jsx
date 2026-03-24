@@ -38,7 +38,7 @@ function Analytics() {
   const [activePlatformIndex, setActivePlatformIndex] = useState(-1);
   const [activeMonthIndex, setActiveMonthIndex] = useState(-1);
 
-  // Status count
+
   const statusCount = {};
   applications.forEach((app) => {
     statusCount[app.status] = (statusCount[app.status] || 0) + 1;
@@ -51,7 +51,7 @@ function Analytics() {
 
   const COLORS = ["#6366f1", "#22c55e", "#facc15", "#ef4444"];
 
-  // Platform count
+
   const platformCount = {};
   applications.forEach((app) => {
     platformCount[app.platform] = (platformCount[app.platform] || 0) + 1;
@@ -62,7 +62,7 @@ function Analytics() {
     count: platformCount[key],
   }));
 
-  // Monthly
+
   const monthlyData = {};
   applications.forEach((app) => {
     if (app.appliedDate) {
@@ -79,7 +79,7 @@ function Analytics() {
     count: monthlyData[month],
   }));
 
-  // Insights
+
   const topPlatform = Object.entries(platformCount).sort(
     (a, b) => b[1] - a[1],
   )[0]?.[0];
@@ -93,7 +93,7 @@ function Analytics() {
         Review performance trends and improve your application strategy.
       </p>
 
-      {/* 🧠 INSIGHT CARDS */}
+    
       <div className="mb-8 grid gap-6 md:grid-cols-3">
         {[
           { label: "Top Platform", value: topPlatform || "N/A" },
@@ -120,9 +120,9 @@ function Analytics() {
         ))}
       </div>
 
-      {/* 📊 MAIN CHARTS */}
+ 
       <div className="grid gap-8 md:grid-cols-2">
-        {/* Status Pie */}
+  
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -166,7 +166,7 @@ function Analytics() {
           </div>
         </motion.div>
 
-        {/* Platform Bar */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -237,7 +237,7 @@ function Analytics() {
         </motion.div>
       </div>
 
-      {/* 📅 MONTHLY */}
+ 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -300,7 +300,7 @@ function Analytics() {
         </div>
       </motion.div>
 
-      {/* 🧠 AI INSIGHTS */}
+ 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -27,7 +27,7 @@ function Applications() {
     .filter((app) => (statusFilter ? app.status === statusFilter : true))
     .filter((app) => (platformFilter ? app.platform === platformFilter : true));
 
-  // Sorting
+
   if (sortOption === "date") {
     filteredApplications.sort(
       (a, b) => new Date(b.appliedDate) - new Date(a.appliedDate),
@@ -49,7 +49,7 @@ function Applications() {
         Search, filter, and manage your tracked opportunities.
       </p>
 
-      {/* 🔍 SEARCH */}
+
       <input
         className="app-input mb-6"
         placeholder="Search by company or role..."
@@ -57,7 +57,7 @@ function Applications() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* 🎯 FILTERS */}
+
       <div className="mb-8 flex flex-wrap gap-4">
         <select
           className="app-select"
@@ -92,7 +92,7 @@ function Applications() {
         </select>
       </div>
 
-      {/* 🧾 CARDS */}
+
       {filteredApplications.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-16 text-center">
           <h2 className="mb-3 text-2xl font-bold text-slate-700">

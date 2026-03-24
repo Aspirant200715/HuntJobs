@@ -33,7 +33,7 @@ function AddApplication() {
       <h1 className="app-page-title mb-8">Add Job Application</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {/* Company */}
+
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Company
@@ -42,7 +42,7 @@ function AddApplication() {
           <p className="text-red-500 text-sm mt-1">{errors.company?.message}</p>
         </div>
 
-        {/* Role */}
+  
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Role
@@ -51,7 +51,7 @@ function AddApplication() {
           <p className="text-red-500 text-sm mt-1">{errors.role?.message}</p>
         </div>
 
-        {/* Location */}
+  
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Location
@@ -59,7 +59,7 @@ function AddApplication() {
           <input className="app-input mt-1.5" {...register("location")} />
         </div>
 
-        {/* Salary */}
+
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Salary
@@ -67,7 +67,7 @@ function AddApplication() {
           <input className="app-input mt-1.5" {...register("salary")} />
         </div>
 
-        {/* Platform */}
+ 
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Platform
@@ -75,7 +75,7 @@ function AddApplication() {
           <input className="app-input mt-1.5" {...register("platform")} />
         </div>
 
-        {/* Status */}
+
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Status
@@ -88,7 +88,7 @@ function AddApplication() {
           </select>
         </div>
 
-        {/* Applied Date */}
+   
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Applied Date
@@ -103,7 +103,7 @@ function AddApplication() {
           </p>
         </div>
 
-        {/* Interview Date */}
+   
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Interview Date
@@ -115,7 +115,7 @@ function AddApplication() {
           />
         </div>
 
-        {/* Notes */}
+
         <div>
           <label className="block text-sm font-semibold text-slate-700">
             Notes
@@ -126,7 +126,7 @@ function AddApplication() {
           />
         </div>
 
-        {/* Submit */}
+
         <div className="pt-4">
           <button type="submit" className="app-btn-primary w-full">
             Add Application
