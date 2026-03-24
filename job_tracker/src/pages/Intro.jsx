@@ -5,24 +5,54 @@ function Intro() {
 
   return (
     <div className="min-h-[75vh] flex items-center justify-center">
-      <div className="bg-slate-200/60 backdrop-blur-xl p-10 md:p-16 rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] border border-slate-300/60 max-w-3xl text-center relative overflow-hidden transition-all duration-500 hover:scale-[1.02]">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-400/30 via-slate-200/20 to-indigo-300/30 pointer-events-none"></div>
-        <div className="relative z-10">
-          <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-800 mb-6 tracking-tight">
-            Welcome to HuntJobs
-          </h1>
-          <p className="text-xl text-slate-700 mb-10 leading-relaxed font-medium">
-            Track applications, monitor interview progress, and stay focused on
-            the opportunities that matter most.
-          </p>
+      <div className="w-full max-w-5xl rounded-3xl border border-indigo-200/70 bg-gradient-to-br from-indigo-100/65 via-white/70 to-cyan-100/60 p-8 shadow-xl shadow-indigo-100/70 backdrop-blur-xl md:p-10">
+        <div className="grid items-center gap-8 md:grid-cols-[1.2fr_1fr]">
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-700">
+              Job Application Management
+            </p>
+            <h1 className="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-5xl">
+              Welcome to HuntJobs
+            </h1>
+            <p className="mb-8 max-w-2xl text-base leading-7 text-slate-700 md:text-lg">
+              Manage applications, monitor your pipeline, and make smarter moves
+              with a clean dashboard built for consistent job hunting.
+            </p>
 
-          <button
-            type="button"
-            onClick={() => navigate("/login")}
-            className="inline-flex items-center justify-center bg-gradient-to-r from-slate-800 to-indigo-900 hover:from-slate-900 hover:to-indigo-950 text-white font-extrabold text-lg px-10 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-          >
-            Get Started
-          </button>
+            <button
+              type="button"
+              onClick={() => navigate("/login")}
+              className="app-btn-primary px-8 py-3"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                text: "Track every opportunity",
+                tone: "from-indigo-50 to-indigo-100/70 border-indigo-200",
+              },
+              {
+                text: "See progress instantly",
+                tone: "from-cyan-50 to-cyan-100/70 border-cyan-200",
+              },
+              {
+                text: "Stay consistent and focused",
+                tone: "from-violet-50 to-violet-100/70 border-violet-200",
+              },
+            ].map((item) => (
+              <div
+                key={item.text}
+                className={`rounded-xl border bg-gradient-to-r px-4 py-3 shadow-sm backdrop-blur ${item.tone}`}
+              >
+                <p className="text-sm font-semibold text-slate-800">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

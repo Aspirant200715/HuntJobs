@@ -1,12 +1,11 @@
 function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-900 relative overflow-hidden selection:bg-indigo-600 selection:text-white">
-      {/* Decorative gradient orbs for a modern, full background */}
-      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 md:opacity-40 pointer-events-none"></div>
-      <div className="absolute top-[20%] right-[-5%] w-96 h-96 bg-slate-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 md:opacity-40 pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] left-[20%] w-[500px] h-[500px] bg-blue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 md:opacity-40 pointer-events-none"></div>
+    <div className="relative min-h-screen overflow-hidden bg-slate-50 text-slate-900 selection:bg-indigo-600 selection:text-white">
+      <div className="pointer-events-none absolute -left-24 -top-20 h-80 w-80 rounded-full bg-indigo-200/60 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 top-24 h-72 w-72 rounded-full bg-cyan-200/50 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-violet-200/45 blur-3xl" />
 
-      <div className="max-w-6xl mx-auto px-4 py-8 relative z-10">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8">
         {children}
       </div>
     </div>

@@ -44,22 +44,23 @@ function Applications() {
 
   return (
     <div>
-      <h1 className="text-3xl font-extrabold text-gray-900 mb-6">
-        Your Applications
-      </h1>
+      <h1 className="app-page-title">Your Applications</h1>
+      <p className="app-page-subtitle mb-6">
+        Search, filter, and manage your tracked opportunities.
+      </p>
 
       {/* 🔍 SEARCH */}
       <input
-        className="w-full border border-gray-300 bg-white rounded-xl px-5 py-3.5 mb-6 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-900 focus:border-indigo-900 transition-all text-gray-900 font-medium text-lg placeholder-gray-400"
+        className="app-input mb-6"
         placeholder="Search by company or role..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
       {/* 🎯 FILTERS */}
-      <div className="flex flex-wrap gap-4 mb-8">
+      <div className="mb-8 flex flex-wrap gap-4">
         <select
-          className="border border-gray-300 rounded-xl px-4 py-2.5 shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-900 focus:border-indigo-900 text-gray-800 font-medium cursor-pointer hover:bg-gray-50 transition-all"
+          className="app-select"
           onChange={(e) => setStatusFilter(e.target.value)}
         >
           <option value="">All Status</option>
@@ -70,7 +71,7 @@ function Applications() {
         </select>
 
         <select
-          className="border border-gray-300 rounded-xl px-4 py-2.5 shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-900 focus:border-indigo-900 text-gray-800 font-medium cursor-pointer hover:bg-gray-50 transition-all"
+          className="app-select"
           onChange={(e) => setPlatformFilter(e.target.value)}
         >
           <option value="">All Platforms</option>
@@ -81,7 +82,7 @@ function Applications() {
         </select>
 
         <select
-          className="border border-gray-300 rounded-xl px-4 py-2.5 shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-900 focus:border-indigo-900 text-gray-800 font-medium cursor-pointer hover:bg-gray-50 transition-all"
+          className="app-select"
           onChange={(e) => setSortOption(e.target.value)}
         >
           <option value="">Sort By</option>
@@ -94,29 +95,29 @@ function Applications() {
       {/* 🧾 CARDS */}
       {filteredApplications.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-16 text-center">
-          <h2 className="text-2xl font-bold text-gray-700 mb-3">
+          <h2 className="mb-3 text-2xl font-bold text-slate-700">
             No Applications Found
           </h2>
-          <p className="text-gray-500 mb-4">
+          <p className="mb-4 text-slate-500">
             Start tracking your job applications to see them here.
           </p>
 
           <button
             onClick={() => navigate("/applications/new")}
-            className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition-all"
+            className="app-btn-primary"
           >
             + Add Your First Job
           </button>
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
           {filteredApplications.map((app, index) => (
             <motion.div
               key={app.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
-              className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-sm border border-white/60 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative"
+              className="app-card relative p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
             >
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
@@ -129,29 +130,29 @@ function Applications() {
                     }}
                   />
 
-                  <h3 className="text-xl font-bold text-gray-900 capitalize">
+                  <h3 className="text-lg font-bold text-slate-900 capitalize">
                     {app.company}
                   </h3>
                 </div>
 
-                <span className="text-xs font-bold px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full border border-blue-100 uppercase tracking-wide">
+                <span className="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700">
                   {app.status}
                 </span>
               </div>
 
-              <p className="text-gray-700 font-medium mt-3 text-lg">
+              <p className="mt-3 text-base font-medium text-slate-700">
                 {app.role}
               </p>
 
-              <div className="text-sm text-gray-500 mt-2">
+              <div className="mt-2 space-y-1 text-sm text-slate-500">
                 <p>Platform: {app.platform}</p>
                 <p>Salary: ₹{app.salary}</p>
                 <p>Applied: {app.appliedDate}</p>
               </div>
 
-              <div className="flex gap-3 mt-6 items-center border-t border-gray-100 pt-4">
+              <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
                 <button
-                  className="flex items-center gap-1.5 text-sm font-semibold text-red-600 hover:text-red-800 bg-red-50 hover:bg-red-100 px-3 py-2 rounded-lg transition-colors"
+                  className="flex items-center gap-1.5 rounded-lg bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition-colors hover:bg-red-100"
                   onClick={() => {
                     deleteApplication(app.id);
                     toast.error("Application deleted");
@@ -161,7 +162,7 @@ function Applications() {
                 </button>
 
                 <button
-                  className="flex items-center gap-1.5 text-sm font-semibold text-yellow-600 hover:text-yellow-800 bg-yellow-50 hover:bg-yellow-100 px-3 py-2 rounded-lg transition-colors"
+                  className="flex items-center gap-1.5 rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-100"
                   onClick={() => toggleBookmark(app.id)}
                 >
                   <FaBookmark />
@@ -169,7 +170,7 @@ function Applications() {
                 </button>
 
                 <button
-                  className="flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition-colors"
+                  className="flex items-center gap-1.5 rounded-lg bg-blue-50 px-3 py-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
                   onClick={() => navigate(`/applications/${app.id}`)}
                 >
                   <FaEdit /> Edit

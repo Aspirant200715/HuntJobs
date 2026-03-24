@@ -12,33 +12,35 @@ function Navbar({ userName }) {
   ];
 
   return (
-    <nav className="bg-slate-900/95 backdrop-blur-xl border-b border-slate-800 text-slate-100 px-8 py-4 flex items-center justify-between shadow-md sticky top-0 z-50">
-      {/* Logo */}
-      <h1 className="text-2xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">
-        HuntJobs
-      </h1>
+    <nav className="sticky top-0 z-50 border-b border-slate-700/30 bg-[#1b2340]/95 px-6 py-3 shadow-md shadow-slate-900/35 backdrop-blur-xl">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-3">
+        <h1 className="text-4xl font-black tracking-tight bg-gradient-to-r from-indigo-200 via-cyan-300 to-sky-400 bg-clip-text text-transparent md:text-[2.1rem]">
+          HuntJobs
+        </h1>
 
-      {/* Links */}
-      <div className="flex items-center gap-6">
-        {navItems.map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            className={`px-4 py-2 rounded-xl text-sm font-bold transition-all duration-300 ${
-              location.pathname === item.path
-                ? "bg-indigo-600 text-white shadow-md transform hover:-translate-y-0.5"
-                : "text-slate-300 hover:bg-slate-800 hover:text-white hover:shadow-sm"
-            }`}
-          >
-            {item.name}
-          </Link>
-        ))}
+        <div className="flex items-center gap-2 md:gap-3">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`rounded-2xl px-4 py-2 text-sm font-extrabold transition-all duration-200 md:px-5 ${
+                location.pathname === item.path
+                  ? "bg-indigo-600 text-white shadow-md shadow-indigo-900/40"
+                  : "text-slate-200 hover:bg-slate-800/80 hover:text-white"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
 
-        {userName && (
-          <span className="text-sm text-indigo-100 bg-indigo-900/50 border border-indigo-700/50 px-4 py-1.5 rounded-full shadow-sm font-bold tracking-wide">
-            {userName}
-          </span>
-        )}
+        <div className="flex justify-end">
+          {userName && (
+            <span className="rounded-full border border-indigo-500/35 bg-indigo-500/20 px-4 py-2 text-xs font-extrabold text-indigo-100 shadow-sm md:text-sm">
+              {userName}
+            </span>
+          )}
+        </div>
       </div>
     </nav>
   );
